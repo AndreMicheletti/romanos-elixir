@@ -25,20 +25,26 @@ defmodule Romanos do
 
   """
   def to_roman(number) do
-    
-    digits = Integer.digits(number)
-    digits_len = length(digits)
 
-    case digits_len do
-      len when len > 4 ->
-        {:error, "Can't convert numbers greater than 9999"}
-      len when len <= 4 ->
-        Enum.with_index(digits)
-        |> Enum.map(fn {digit, index} -> unit_logic_by_pos(digit, digits_len - index) end)
-        |> Enum.join
-      _ ->
-        {:error, "Unknown input type"}
-    end
+    unless number < 1 do
+
+      digits = Integer.digits(number)
+      digits_len = length(digits)
+
+      case digits_len do
+        len when len > 4 ->
+          {:error, "Can't convert numbers greater than 9999"}
+        len when len <= 4 ->
+          Enum.with_index(digits)
+          |> Enum.map(fn {digit, index} -> unit_logic_by_pos(digit, digits_len - index) end)
+          |> Enum.join
+        _ ->
+          {:error, "Unknown input type"}
+      end
+      
+    else
+      {:error, "Can't convert numbers less than 1"}
+    end    
   end
 
   def unit_logic_by_pos(number, pos) do

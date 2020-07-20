@@ -2,6 +2,14 @@ defmodule RomanosTest do
   use ExUnit.Case
   doctest Romanos
 
+  test "big numbers gives an error" do
+    assert {:error, _} = Romanos.to_roman(99999)
+  end
+
+  test "less than 0 gives an error" do
+    assert {:error, _} = Romanos.to_roman(0)
+  end
+
   test "1 is converted to I" do
     assert Romanos.to_roman(1) == "I"
   end
@@ -67,9 +75,5 @@ defmodule RomanosTest do
   end
   test "5423 is converted to MMMMMCDXXIII" do
     assert Romanos.to_roman(5423) == "MMMMMCDXXIII"
-  end
-
-  test "big numbers give an error" do
-    assert {:error, _} = Romanos.to_roman(99999)
   end
 end

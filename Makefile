@@ -5,3 +5,7 @@ default:
 run-docker:
 	@ docker build -t romanos_elixir .
 	@ docker run -it romanos_elixir
+
+docs:
+	@ mix docs
+	@ browse doc/index.html

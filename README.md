@@ -22,3 +22,9 @@ Go to the project directory and run the command:
 Or, to use docker, run the Makefile target:
 
 `make run-docker`
+
+## Docs
+
+You can see the generated docs using the Makefile target:
+
+`make docs`

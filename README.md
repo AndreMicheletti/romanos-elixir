@@ -1,21 +1,24 @@
 # Romanos
 
-**TODO: Add description**
+Elixir solution for converting arabic numbers to roman numeral
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `romanos` to your list of dependencies in `mix.exs`:
+Requires:
+ - [Elixir](https://elixir-lang.org/install.html#distributions)
 
-```elixir
-def deps do
-  [
-    {:romanos, "~> 0.1.0"}
-  ]
-end
+Clone the repository, and install the requirements:
+
+```
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/romanos](https://hexdocs.pm/romanos).
+## Tests
 
+Go to the project directory and run the command:
+
+`mix test`
+
+Or, to use docker, run the Makefile target:
+
+`make run-docker`

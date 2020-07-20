@@ -3,6 +3,7 @@ defmodule Romanos do
     Gives functions used to convert from arabic numerals to roman numerals
   """
 
+  @spec to_roman(integer) :: string
   @doc """
     Convert arabic number to roman number
 
@@ -26,7 +27,7 @@ defmodule Romanos do
   """
   def to_roman(number) do
 
-    if number > 0 do
+    if number > 0 and Kernel.is_integer(number) do
 
       digits = Integer.digits(number)
       digits_len = length(digits)
@@ -43,7 +44,7 @@ defmodule Romanos do
       end
 
     else
-      {:error, "Can't convert numbers less than 1"}
+      {:error, "Argument must be an integer greater than 0"}
     end    
   end
 

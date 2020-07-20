@@ -10,36 +10,23 @@ defmodule RomanosTest do
     assert {:error, _} = Romanos.to_roman(0)
   end
 
-  test "1 is converted to I" do
+  test "gives an error when argument is not integer" do
+    assert {:error, _} = Romanos.to_roman("a")
+  end
+
+  test "1 to 10 roman logic (I to X)" do
     assert Romanos.to_roman(1) == "I"
-  end
-  test "2 is converted to II" do
     assert Romanos.to_roman(2) == "II"
-  end
-  test "3 is converted to III" do
     assert Romanos.to_roman(3) == "III"
-  end
-  test "4 is converted to IV" do
     assert Romanos.to_roman(4) == "IV"
-  end
-  test "5 is converted to V" do
     assert Romanos.to_roman(5) == "V"
-  end
-  test "6 is converted to VI" do
     assert Romanos.to_roman(6) == "VI"
-  end
-  test "7 is converted to VII" do
     assert Romanos.to_roman(7) == "VII"
-  end
-  test "8 is converted to VIII" do
     assert Romanos.to_roman(8) == "VIII"
-  end
-  test "9 is converted to IX" do
     assert Romanos.to_roman(9) == "IX"
-  end
-  test "10 is converted to X" do
     assert Romanos.to_roman(10) == "X"
   end
+
   test "19 is converted to XIX" do
     assert Romanos.to_roman(19) == "XIX"
   end

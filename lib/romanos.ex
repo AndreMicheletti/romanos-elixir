@@ -26,7 +26,7 @@ defmodule Romanos do
   """
   def to_roman(number) do
 
-    unless number < 1 do
+    if number > 0 do
 
       digits = Integer.digits(number)
       digits_len = length(digits)
@@ -41,7 +41,7 @@ defmodule Romanos do
         _ ->
           {:error, "Unknown input type"}
       end
-      
+
     else
       {:error, "Can't convert numbers less than 1"}
     end    
